@@ -14,7 +14,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
     get root_path    # 名前付きルートに変更
     assert_response :success　# ステータスコード 200
-    assert_select  "title", "#{@base_title}"　#タイトルにこれが表示してるかチェック
+    assert_select "title", "#{@base_title}"　#タイトルにこれが表示してるかチェック
   end
 
   test "should get help" do

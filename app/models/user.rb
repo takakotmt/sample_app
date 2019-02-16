@@ -12,6 +12,8 @@ class User < ApplicationRecord
             # uniqueness: true # メールアドレスの一意性を検証
             uniqueness: {case_sensitive: false} # メールアドレスの大文字小文字を無視した一意性
 
+  # パスワードのハッシュ化。 gemを追加する
   has_secure_password
+  
   validates :password, presence: true, length: { minimum: 6 }
 end
