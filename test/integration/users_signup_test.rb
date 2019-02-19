@@ -26,8 +26,12 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          password_confirmation: "password" } }
     end
     follow_redirect!
+     # 'users/showのテンプレートが表示されているか。
     assert_template 'users/show'
+    # flashメッセージが空でないことを確認
     assert_not flash.FILL_IN
+    # ユーザー登録後のログインしたかチェック
+    assert is_logged_in?
   end
 
 end
